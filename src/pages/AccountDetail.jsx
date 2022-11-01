@@ -63,7 +63,7 @@ const AccountDetail = () => {
             />
             <button
               type="submit"
-              className="btn btn-danger ms-5 p-2"
+              className="btn btn-danger ms-3 p-2"
               onClick={handleCredit}
             >
               Credit
