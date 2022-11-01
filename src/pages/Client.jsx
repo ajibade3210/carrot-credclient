@@ -28,9 +28,9 @@ const Clients = () => {
             </tr>
           </thead>
           <tbody>
-            {clients.map(client => (
+            {clients.map((client, idx) => (
               <tr key={client.id}>
-                <td>{client.id}</td>
+                <td>{idx+1}</td>
                 <td>
                   <Link
                     to={`/view/${client.id}`}
