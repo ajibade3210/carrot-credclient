@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// API Calls To Endpoints
 export const createClient = async (client) => {
     let response;
     response = await axios.post(`${process.env.REACT_APP_PUBLIC_URL}/clients`,client);
@@ -35,7 +36,7 @@ export const updateAccount = async (amount, clientId, type) => {
       response = await axios.put(
         `${process.env.REACT_APP_PUBLIC_URL}/clients/credit/${clientId}`,
         {
-          credit: amount,
+          credit: +amount,
         }
       );
     } else if (type === "debit") {

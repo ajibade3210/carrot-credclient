@@ -32,11 +32,10 @@ const AccountDetail = () => {
     await updateAccount(amount, clientId, type);
     setAmount(0);
    };
-
   return (
     <>
       <button
-        className="btn btn-secondary m-5 btn-sm btn-md"
+        className="btn btn-dark m-5 btn-sm btn-md"
         onClick={e => navigate("/")}
       >
         back
@@ -50,9 +49,9 @@ const AccountDetail = () => {
         <div className="h3 flex-grow-1 p-2 ms-5">
           <p>Firstname: {client.firstname}</p>
           <p>Lastname: {client.lastname}</p>
+          <p>Account: {client.accountType}</p>
           <p className="mb-5">
-            Total {client.accountType || "amount"}: $
-            <mark>{client.amount}</mark>
+            Total {client.key}: $<mark>{client.fund}</mark>
           </p>
           <form className="">
             <input

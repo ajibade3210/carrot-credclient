@@ -9,7 +9,7 @@ import Clients from "./pages/Client";
 
 function App() {
   return (
-    <div className="App text-capitalize ">
+    <div className="App text-capitalize">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Clients />} />

@@ -28,21 +28,25 @@ const Clients = () => {
             </tr>
           </thead>
           <tbody>
-            {clients.map((client, idx) => (
-              <tr key={client.id}>
-                <td>{idx+1}</td>
-                <td>
-                  <Link
-                    to={`/view/${client.id}`}
-                    className="text-decoration-none"
-                  >
-                    {client.firstname + " " + client.lastname}
-                  </Link>
-                </td>
-                <td>{client.amount}</td>
-                <td>{client.accountType || "N/A"}</td>
-              </tr>
-            ))}
+            {clients.map((client, idx) =>{
+              var values = Object.keys(client.amount);
+              return (
+                <tr key={client.id}>
+                  <td>{idx + 1}</td>
+                  <td>
+                    <Link
+                      to={`/view/${client.id}`}
+                      className="text-decoration-none"
+                    >
+                      {client.firstname + " " + client.lastname}
+                    </Link>
+                  </td>
+                  <td>{client.amount[values[0]]}</td>
+                  <td>{client.accountType}</td>
+                </tr>
+              );
+            }
+            )}
           </tbody>
         </table>
       </div>
